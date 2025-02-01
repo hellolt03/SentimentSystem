@@ -1,0 +1,320 @@
+我采用flask架构，你帮我看看为什么这个页面显示不出来，下面是我的前端页面，我确定我的base_page.html存在
+{% extends 'base_page.html' %}
+
+{% block title %}
+test页
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+            <div class="col-sm-12">
+               <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                     <div class="header-title">
+                        <h4 class="card-title">Bootstrap Datatables</h4>
+                     </div>
+                  <div class="header-action">
+                           <i data-toggle="collapse" data-target="#datatable-1" aria-expanded="false">
+                              <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                              </svg>
+                           </i>
+                        </div>
+                  </div>
+                  <div class="card-body">
+                     <div class="collapse" id="datatable-1">
+                           <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+</code></pre></kbd></div>
+                        </div>
+                     <p>Images in Bootstrap are made responsive with <code>.img-fluid</code>. <code>max-width: 100%;</code> and <code>height: auto;</code> are applied to the image so that it scales with the parent element.</p>
+                     <div class="table-responsive">
+                        <div id="datatable-1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="datatable-1_length"><label>Show <select name="datatable-1_length" aria-controls="datatable-1" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="datatable-1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable-1"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="datatable-1" class="table data-table table-striped table-bordered dataTable" role="grid" aria-describedby="datatable-1_info">
+                           <thead>
+                              <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 176px;">Name</th><th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282.281px;">Position</th><th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 130.792px;">Office</th><th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 50.6771px;">Age</th><th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 117.115px;">Start date</th><th class="text-right sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 106.469px;">Salary</th></tr>
+                           </thead>
+                           <tbody>
+                           <tr class="odd">
+                                 <td class="sorting_1">Airi Satou</td>
+                                 <td>Accountant</td>
+                                 <td>Tokyo</td>
+                                 <td>33</td>
+                                 <td>2008/11/28</td>
+                                 <td class="text-right">$162,700</td>
+                              </tr><tr class="even">
+                                 <td class="sorting_1">Angelica Ramos</td>
+                                 <td>Chief Executive Officer (CEO)</td>
+                                 <td>London</td>
+                                 <td>47</td>
+                                 <td>2009/10/09</td>
+                                 <td class="text-right">$1,200,000</td>
+                              </tr><tr class="odd">
+                                 <td class="sorting_1">Ashton Cox</td>
+                                 <td>Junior Technical Author</td>
+                                 <td>San Francisco</td>
+                                 <td>66</td>
+                                 <td>2009/01/12</td>
+                                 <td class="text-right">$86,000</td>
+                              </tr><tr class="even">
+                                 <td class="sorting_1">Bradley Greer</td>
+                                 <td>Software Engineer</td>
+                                 <td>London</td>
+                                 <td>41</td>
+                                 <td>2012/10/13</td>
+                                 <td class="text-right">$132,000</td>
+                              </tr><tr class="odd">
+                                 <td class="sorting_1">Brenden Wagner</td>
+                                 <td>Software Engineer</td>
+                                 <td>San Francisco</td>
+                                 <td>28</td>
+                                 <td>2011/06/07</td>
+                                 <td class="text-right">$206,850</td>
+                              </tr><tr class="even">
+                                 <td class="sorting_1">Brielle Williamson</td>
+                                 <td>Integration Specialist</td>
+                                 <td>New York</td>
+                                 <td>61</td>
+                                 <td>2012/12/02</td>
+                                 <td class="text-right">$372,000</td>
+                              </tr><tr class="odd">
+                                 <td class="sorting_1">Bruno Nash</td>
+                                 <td>Software Engineer</td>
+                                 <td>London</td>
+                                 <td>38</td>
+                                 <td>2011/05/03</td>
+                                 <td class="text-right">$163,500</td>
+                              </tr><tr class="even">
+                                 <td class="sorting_1">Caesar Vance</td>
+                                 <td>Pre-Sales Support</td>
+                                 <td>New York</td>
+                                 <td>21</td>
+                                 <td>2011/12/12</td>
+                                 <td class="text-right">$106,450</td>
+                              </tr><tr class="odd">
+                                 <td class="sorting_1">Cara Stevens</td>
+                                 <td>Sales Assistant</td>
+                                 <td>New York</td>
+                                 <td>46</td>
+                                 <td>2011/12/06</td>
+                                 <td class="text-right">$145,600</td>
+                              </tr><tr class="even">
+                                 <td class="sorting_1">Cedric Kelly</td>
+                                 <td>Senior Javascript Developer</td>
+                                 <td>Edinburgh</td>
+                                 <td>22</td>
+                                 <td>2012/03/29</td>
+                                 <td class="text-right">$433,060</td>
+                              </tr></tbody>
+                           <tfoot>
+                              <tr><th rowspan="1" colspan="1">Name</th><th rowspan="1" colspan="1">Position</th><th rowspan="1" colspan="1">Office</th><th rowspan="1" colspan="1">Age</th><th rowspan="1" colspan="1">Start date</th><th class="text-right" rowspan="1" colspan="1">Salary</th></tr>
+                           </tfoot>
+                        </table></div></div></div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                     <div class="header-title">
+                        <h4 class="card-title">Bootstrap Datatables With Checkbox</h4>
+                     </div>
+                  <div class="header-action">
+                           <i data-toggle="collapse" data-target="#datatable-2" aria-expanded="false">
+                              <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                              </svg>
+                           </i>
+                        </div>
+                  </div>
+                  <div class="card-body">
+                     <div class="collapse" id="datatable-2">
+                        <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables-1" class="text-white"><code>
+                           </code></pre></kbd>
+                        </div>
+                     </div>
+                     <p>Images in Bootstrap are made responsive with <code>.img-fluid</code>. <code>max-width: 100%;</code> and <code>height: auto;</code> are applied to the image so that it scales with the parent element.</p>
+                     <div class="table-responsive">
+                        <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="datatable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="datatable" class="table data-table table-striped table-bordered dataTable" role="grid" aria-describedby="datatable_info">
+                           <thead>
+                              <tr role="row"><th class="pr-0 sorting sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                                 : activate to sort column descending" style="width: 54.6354px;">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck1">
+                                          <label class="custom-control-label" for="customCheck1"></label>
+                                       </div>
+                                    </div>
+                                 </th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 172.094px;">Name</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 238.615px;">Position</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 127.667px;">Office</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 48.9271px;">Age</th><th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 109.104px;">Start date</th><th class="text-right sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 91.625px;">Salary</th></tr>
+                           </thead>
+                           <tbody>
+                            <tr class="odd">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck">
+                                          <label class="custom-control-label" for="customCheck"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Tiger Nixon</td>
+                                 <td>System Architect</td>
+                                 <td>Edinburgh</td>
+                                 <td>61</td>
+                                 <td>2011/04/25</td>
+                                 <td class="text-right">$320,800</td>
+                              </tr><tr class="even">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck2">
+                                          <label class="custom-control-label" for="customCheck2"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Garrett Winters</td>
+                                 <td>Accountant</td>
+                                 <td>Tokyo</td>
+                                 <td>63</td>
+                                 <td>2011/07/25</td>
+                                 <td class="text-right">$170,750</td>
+                              </tr><tr class="odd">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck3">
+                                          <label class="custom-control-label" for="customCheck3"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Herrod Chandler</td>
+                                 <td>Sales Assistant</td>
+                                 <td>San Francisco</td>
+                                 <td>59</td>
+                                 <td>2012/08/06</td>
+                                 <td class="text-right">$137,500</td>
+                              </tr><tr class="even">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck4">
+                                          <label class="custom-control-label" for="customCheck4"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Rhona Davidson</td>
+                                 <td>Integration Specialist</td>
+                                 <td>Tokyo</td>
+                                 <td>55</td>
+                                 <td>2010/10/14</td>
+                                 <td class="text-right">$327,900</td>
+                              </tr><tr class="odd">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck5">
+                                          <label class="custom-control-label" for="customCheck5"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Colleen Hurst</td>
+                                 <td>Javascript Developer</td>
+                                 <td>San Francisco</td>
+                                 <td>39</td>
+                                 <td>2009/09/15</td>
+                                 <td class="text-right">$205,500</td>
+                              </tr><tr class="even">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck6">
+                                          <label class="custom-control-label" for="customCheck6"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Sonya Frost</td>
+                                 <td>Software Engineer</td>
+                                 <td>Edinburgh</td>
+                                 <td>23</td>
+                                 <td>2008/12/13</td>
+                                 <td class="text-right">$103,600</td>
+                              </tr><tr class="odd">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck11">
+                                          <label class="custom-control-label" for="customCheck11"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Jena Gaines</td>
+                                 <td>Office Manager</td>
+                                 <td>London</td>
+                                 <td>30</td>
+                                 <td>2008/12/19</td>
+                                 <td class="text-right">$90,560</td>
+                              </tr><tr class="even">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck7">
+                                          <label class="custom-control-label" for="customCheck7"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Quinn Flynn</td>
+                                 <td>Support Lead</td>
+                                 <td>Edinburgh</td>
+                                 <td>22</td>
+                                 <td>2013/03/03</td>
+                                 <td class="text-right">$342,000</td>
+                              </tr><tr class="odd">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck8">
+                                          <label class="custom-control-label" for="customCheck8"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Charde Marshall</td>
+                                 <td>Regional Director</td>
+                                 <td>San Francisco</td>
+                                 <td>36</td>
+                                 <td>2008/10/16</td>
+                                 <td class="text-right">$470,600</td>
+                              </tr><tr class="even">
+                                 <td class="pr-0 sorting_1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck9">
+                                          <label class="custom-control-label" for="customCheck9"></label>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td>Haley Kennedy</td>
+                                 <td>Senior Marketing Designer</td>
+                                 <td>London</td>
+                                 <td>43</td>
+                                 <td>2012/12/18</td>
+                                 <td class="text-right">$313,500</td>
+                              </tr></tbody>
+                           <tfoot>
+                              <tr><td class="pr-0" rowspan="1" colspan="1">
+                                    <div class="d-flex justify-content-start align-items-end mb-1 ">
+                                       <div class="custom-control custom-checkbox custom-control-inline">
+                                          <input type="checkbox" class="custom-control-input m-0" id="customCheck100">
+                                          <label class="custom-control-label" for="customCheck100"></label>
+                                       </div>
+                                    </div>
+                                 </td><th rowspan="1" colspan="1">Name</th><th rowspan="1" colspan="1">Position</th><th rowspan="1" colspan="1">Office</th><th rowspan="1" colspan="1">Age</th><th rowspan="1" colspan="1">Start date</th><th class="text-right" rowspan="1" colspan="1">Salary</th></tr>
+                           </tfoot>
+                        </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing 1 to 10 of 11 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="datatable_previous"><a href="#" aria-controls="datatable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next" id="datatable_next"><a href="#" aria-controls="datatable" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+{% endblock %}
+
+{% block echarts %}
+    <script>
+
+    </script>
+{% endblock %}

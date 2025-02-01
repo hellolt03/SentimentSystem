@@ -1,0 +1,100 @@
+{% extends 'base_page.html' %}
+
+{% block title %}
+微博舆情统计页
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+    <div class="row">
+        <!-- 热词统计标题 -->
+        <div class="col-md-12 mb-4 mt-1">
+            <h4 class="font-weight-bold">微博舆情统计页</h4>
+        </div>
+        <!-- 统计表格 -->
+        <div class="row">
+            <div class="col-sm-12">
+               <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                     <div class="header-title">
+                        <h4 class="card-title">微博文章统计表格-舆情情感分类</h4>
+                     </div>
+                      <p><a href="/page/tableData?flag=True" class="btn btn-primary btn-sm">情感分类</a></p>
+                  </div>
+                  <div class="card-body">
+                     <div class="collapse" id="datatable-1">
+                           <div class="card">
+                               <kbd class="bg-dark">
+                                   <pre id="bootstrap-datatables" class="text-white"><code></code>
+                                   </pre>
+                               </kbd>
+                           </div>
+                     </div>
+                     <div class="table-responsive">
+                        <div id="datatable-1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="row">
+                               <table id="datatable-1" class="table data-table table-striped table-bordered dataTable" role="grid" aria-describedby="datatable-1_info">
+                           <thead>
+                              <tr>
+                                 <th>文章ID</th>
+                                 <th>文章IP</th>
+                                 <th>点赞量</th>
+                                 <th>转发量</th>
+                                 <th>评论量</th>
+                                  <th>类型</th>
+                                  <th>内容</th>
+                                  <th>发布时间</th>
+                                  {% if defaultFlag %}
+                                      <th>情感分类</th>
+                                  {% endif %}
+                              </tr>
+                           </thead>
+                            <tbody>
+                                {% for article in tableData %}
+                                    <tr class="even">
+                                     <td style="width: 120px" class="sorting_1">
+                                         <a href="{{ article[9] }}">
+                                             {{ article[0] }}
+                                         </a>
+                                     </td>
+                                     <td style="width: 90px">{{ article[4] }}</td>
+                                     <td style="width: 90px">{{ article[1] }}</td>
+                                     <td style="width: 90px">{{ article[2] }}</td>
+                                     <td style="width: 90px">{{ article[3] }}</td>
+                                     <td style="width: 90px">{{ article[8] }}</td>
+                                    <td style="width: auto" class="overflow: hidden">{{ article[5] }}</td>
+                                    <td style="width: 150px">{{ article[7] }}</td>
+                                    {% if defaultFlag %}
+                                        <td style="width: 120px">
+                                            {% if article[-1] == '正面' %}
+                                                <span class="text-success">
+                                                {{ article[-1] }}
+                                                </span>
+                                            {% elif article[-1] == '负面'%}
+                                                <span class="text-danger">
+                                                {{ article[-1] }}
+                                                </span>
+                                            {% else %}
+                                                <span class="text-warning">
+                                                {{ article[-1] }}
+                                                </span>
+                                            {% endif %}
+                                        </td>
+                                    {% endif %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table></div></div>
+                    </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+</div>
+{% endblock %}
+
+{% block echarts %}
+    <script>
+
+    </script>
+{% endblock %}

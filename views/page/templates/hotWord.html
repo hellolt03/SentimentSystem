@@ -1,0 +1,198 @@
+{% extends 'base_page.html' %}
+{% block title %}
+    热词统计
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- 热词统计标题 -->
+        <div class="col-md-12 mb-4 mt-1">
+            <h4 class="font-weight-bold">热词统计</h4>
+        </div>
+        <!-- 热词选择 -->
+        <div class="col-lg-12">
+            <div class="card card-block card-stretch card-height">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="hotWordSelect">热词选择</label>
+                        <select id="hotWordSelect" onchange="hotWordChange(event)" class="form-control form-control-lg">
+                            {% for i in hotWordList %}
+                                {% if defaultHotWord == i[0] %}
+                                    <option selected value="{{ i[0] }}">{{ i[0] }}</option>
+                                {% else %}
+                                    <option value="{{ i[0] }}">{{ i[0] }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <script>
+                        function hotWordChange(e) {
+                            window.location.href = 'http://127.0.0.1:5000/page/hotWord?hotWord=' + e.target.value;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- 热词信息展示 -->
+        <div class="col-md-12 d-flex justify-content-center mt-4">
+            <div class="card" style="width: 50%; padding: 20px;">
+                <div class="card-body text-center">
+                    <div class="card-body">
+                        <h4 class="card-title font-size-16 mt-0">{{ defaultHotWord }}</h4>
+                    </div>
+                   <ul class="list-group list-group-flush">
+                       <li class="list-group-item">热词名称：{{ defaultHotWord }}</li>
+                       <li class="list-group-item">出现次数：{{ hotWordLen }}次</li>
+                       <li class="list-group-item">热词情感：{{ sentences }}</li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 柱状图 -->
+        <div class="col-md-12">
+            <div class="col-lg-12">
+                <div class="card">
+                   <div class="card-body">
+                       <h4 class="card-title font-size-16 mt-0">热词年份变化趋势</h4>
+                   </div>
+                   <div id="main" style="width: 100%;height: 450px">
+
+                   </div>
+               </div>
+            </div>
+
+        </div>
+        <!-- 柱状图 -->
+        <div>
+            <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                     <div class="header-title">
+                        <h4 class="card-title">热词查询表格</h4>
+                     </div>
+                  <div class="header-action">
+                           <i data-toggle="collapse" data-target="#datatable-1" aria-expanded="false">
+                              <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                              </svg>
+                           </i>
+                        </div>
+                  </div>
+                  <div class="card-body">
+                     <div class="collapse" id="datatable-1">
+                           <div class="card"><kbd class="bg-dark"><pre id="bootstrap-datatables" class="text-white"><code>
+
+</code></pre></kbd></div>
+                        </div>
+                     <p>根据选择的热词从而查询评论数据</p>
+                     <div class="table-responsive">
+                        <div id="datatable-1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="datatable-1" class="table data-table table-striped table-bordered dataTable" role="grid" aria-describedby="datatable-1_info">
+                           <thead>
+                              <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 176px;">文章ID</th>
+                                  <th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 282.281px;">评论用户</th>
+                                  <th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 130.792px;">评论性别</th>
+                                  <th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 50.6771px;">评论地址</th>
+                                  <th class="sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 117.115px;">评论内容</th>
+                                  <th class="text-right sorting" tabindex="0" aria-controls="datatable-1" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 106.469px;">点赞量</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                            {% for i in  commentData%}
+                                <tr class="odd">
+                                     <td class="sorting_1">{{ i[0] }}</td>
+                                     <td>{{ i[5] }}</td>
+                                     <td>
+                                         {% if i[6] == 'f' %}
+                                             女性
+                                         {% else %}
+                                             男性
+                                         {% endif %}
+                                     </td>
+                                     <td>{{ i[3] }}</td>
+                                     <td>{{ i[4] }}</td>
+                                     <td class="text-right">{{ i[2] }}</td>
+                                </tr>
+                           {% endfor %}
+                           </tbody>
+                        </table></div></div>
+                        </div>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block echarts %}
+<script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+      tooltip: {
+        trigger: 'axis'
+      },
+      legend: {
+        data: ['热词出现时间分布个数']
+      },
+      toolbox: {
+        show: true,
+        feature: {
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      calculable: true,
+      xAxis: [
+        {
+          type: 'category',
+          // prettier-ignore
+          data: {{ xData | tojson }}
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+        dataZoom: [
+        {
+          show: true,
+          start: 10,
+          end: 30
+        },
+        {
+          type: 'inside',
+          start: 10,
+          end: 30
+        }
+      ],
+      series: [
+        {
+          name: '热词',
+          type: 'bar',
+          data: {{ yData }},
+          markPoint: {
+            data: [
+              { type: 'max', name: 'Max' },
+              { type: 'min', name: 'Min' }
+            ]
+          },
+          markLine: {
+            data: [{ type: 'average', name: 'Avg' }]
+          }
+        }
+      ]
+    };
+
+    option && myChart.setOption(option);
+
+</script>
+{% endblock %}
